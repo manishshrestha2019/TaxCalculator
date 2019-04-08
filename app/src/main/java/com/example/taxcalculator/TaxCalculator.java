@@ -3,8 +3,8 @@ package com.example.taxcalculator;
 public class TaxCalculator {
     float amount;
     float mintax= (float) 0.01;
-    float midtax=15;
-    float maxtax=25;
+    float midtax= (float) 0.15;
+    float maxtax= (float) 0.25;
 
     public float getAmount() {
         return amount;
@@ -23,19 +23,20 @@ public class TaxCalculator {
         else if (amount>200000 && amount<=350000){
             float midAmount=200000;
             float newamount=amount-midAmount;
-            float taxableamount=newamount*mintax/100;
+            float taxableamount=newamount*midtax;
             float newamount2=amount-newamount;
-            //float totaltaxamount=taxableamount+taxableamount2;
-            //return grandPayableTax=totaltaxamount;
+            float midTax=newamount2*mintax;
+            float totaltaxamount=taxableamount+midTax;
+            return grandPayableTax=totaltaxamount;
 
         }
         else if(amount>350000){
             float hightax=amount-350000;
-            float hightaxamount=hightax*maxtax/100;
+            float hightaxamount=hightax*maxtax;
 
             float mediumtax=amount-hightax;
             float mediumtax1=mediumtax-200000;
-            float mediumtaxamount=mediumtax1*midtax/100;
+            float mediumtaxamount=mediumtax1*midtax;
 
 
 
