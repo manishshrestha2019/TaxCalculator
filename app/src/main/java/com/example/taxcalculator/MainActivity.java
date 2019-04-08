@@ -32,8 +32,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             TaxCalculator taxc=new TaxCalculator();
             taxc.setAmount(salary);
-            float tax=taxc.taxableAmount();
-            tvTaxableAmount.setText(Float.toString(tax));
+            Double tax=taxc.taxableAmount();
+            tvTaxableAmount.setText(Double.toString(tax));
         }
 
 

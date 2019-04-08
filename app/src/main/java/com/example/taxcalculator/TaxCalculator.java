@@ -1,51 +1,49 @@
 package com.example.taxcalculator;
 
 public class TaxCalculator {
-    float amount;
-    float mintax= (float) 0.01;
-    float midtax= (float) 0.15;
-    float maxtax= (float) 0.25;
+    double amount;
+    double mintax=0.01;
+    double midtax= 0.15;
+    double maxtax= 0.25;
 
-    public float getAmount() {
+    public double getAmount() {
         return amount;
     }
 
-    public void setAmount(float amount) {
+    public void setAmount(double amount) {
         this.amount = amount;
     }
 
-    public float taxableAmount(){
-        float grandPayableTax = 0;
+    public double taxableAmount(){
+        double grandPayableTax = 0;
         if(amount<=200000){
-            float taxamount=amount*mintax;
+            double taxamount=amount*mintax;
             return grandPayableTax=taxamount;
         }
         else if (amount>200000 && amount<=350000){
-            float midAmount=200000;
-            float newamount=amount-midAmount;
-            float taxableamount=newamount*midtax;
-            float newamount2=amount-newamount;
-            float midTax=newamount2*mintax;
-            float totaltaxamount=taxableamount+midTax;
+            double midAmount=200000;
+            double newamount=amount-midAmount;
+            double taxableamount=newamount*midtax;
+            double newamount2=amount-newamount;
+            double midTax=newamount2*mintax;
+            double totaltaxamount=taxableamount+midTax;
             return grandPayableTax=totaltaxamount;
 
         }
-        else if(amount>350000){
-            float hightax=amount-350000;
-            float hightaxamount=hightax*maxtax;
+        else if(amount>350000) {
 
-            float mediumtax=amount-hightax;
-            float mediumtax1=mediumtax-200000;
-            float mediumtaxamount=mediumtax1*midtax;
+            double minAmount = 200000;
+            double mustPayTax=minAmount*mintax;
+
+            double midAmount=150000;
+            double midPayTax=midAmount*0.015;
+
+            double maxPayamount=amount-350000;
+            double maxPayTax=maxPayamount*maxtax;
 
 
-
-            float lowtax=hightax+mediumtax1;
-            float lowtax1=amount-lowtax;
-            float lowtaxamout=lowtax1*mintax/100;
-
-            float grandtotaltax=hightaxamount+mediumtaxamount+lowtaxamout;
-            return grandPayableTax=grandtotaltax;
+            double totaltaxamount = mustPayTax + midPayTax +maxPayTax;
+            return grandPayableTax = totaltaxamount;
 
 
         }
