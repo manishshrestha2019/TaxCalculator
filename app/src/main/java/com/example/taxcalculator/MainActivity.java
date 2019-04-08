@@ -9,7 +9,7 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     private Button btnCalculate;
-    private TextView tvTaxableAmount;
+    private TextView tvOut,tvTaxableAmount;
     private EditText etAmount;
 
 
@@ -21,6 +21,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btnCalculate=findViewById(R.id.btnCalculate);
         tvTaxableAmount=findViewById(R.id.tvTaxAmount);
         etAmount=findViewById(R.id.etSalary);
+        tvOut=findViewById(R.id.tvTotal);
 
         btnCalculate.setOnClickListener(this);
     }
@@ -28,12 +29,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         int id = v.getId();
         if(id == R.id.btnCalculate)
         {
-            float salary=Float.parseFloat(etAmount.getText().toString());
+            double salary=Double.parseDouble(etAmount.getText().toString());
 
             TaxCalculator taxc=new TaxCalculator();
             taxc.setAmount(salary);
             Double tax=taxc.taxableAmount();
             tvTaxableAmount.setText(Double.toString(tax));
+            double annualsalary=salary*12;
+            double totalsalary=annualsalary-tax;
+            tvOut.setText(Double.toString(totalsalary));
         }
 
 
