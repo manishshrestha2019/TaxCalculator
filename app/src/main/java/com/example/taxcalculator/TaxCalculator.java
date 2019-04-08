@@ -1,20 +1,21 @@
 package com.example.taxcalculator;
 
 public class TaxCalculator {
-    double amount;
+    double salary;
     double mintax=0.01;
     double midtax= 0.15;
     double maxtax= 0.25;
 
     public double getAmount() {
-        return amount;
+        return salary;
     }
 
-    public void setAmount(double amount) {
-        this.amount = amount;
+    public void setAmount(double salary) {
+        this.salary = salary;
     }
 
     public double taxableAmount(){
+        double amount=salary*12;
         double grandPayableTax = 0;
         if(amount<=200000){
             double taxamount=amount*mintax;
