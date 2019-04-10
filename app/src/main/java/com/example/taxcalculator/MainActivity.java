@@ -2,6 +2,7 @@ package com.example.taxcalculator;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -29,6 +30,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         int id = v.getId();
         if(id == R.id.btnCalculate)
         {
+            if(!validate()){
+                return;
+            }
             double salary=Double.parseDouble(etAmount.getText().toString());
 
             TaxCalculator taxc=new TaxCalculator();
@@ -42,5 +46,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
     }
-
+    public boolean validate(){
+        boolean isValid=true;
+        if(TextUtils.isEmpty(etAmount.getText().toString())){
+            etAmount.setError("Please Enter Your Salary");
+            etAmount.requestFocus();
+            isValid=false;
+        }return isValid;
+    }
 }

@@ -29,26 +29,19 @@ public class TaxCalculator {
             double midTax=newamount2*mintax;
             double totaltaxamount=taxableamount+midTax;
             return grandPayableTax=totaltaxamount;
-
         }
         else if(amount>350000) {
-
             double minAmount = 200000;
             double mustPayTax=minAmount*mintax;
-
             double midAmount=150000;
             double midPayTax=midAmount*0.015;
-
             double maxPayamount=amount-350000;
             double maxPayTax=maxPayamount*maxtax;
-
 
             double totaltaxamount = mustPayTax + midPayTax +maxPayTax;
             return grandPayableTax = totaltaxamount;
 
-
         }
         return grandPayableTax;
     }
-    
 }

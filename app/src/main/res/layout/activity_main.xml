@@ -4,97 +4,93 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
+    android:background="#FFC759"
     android:orientation="vertical"
-    android:background="#FFC759">
+    tools:context=".MainActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        >
+        android:orientation="horizontal">
+
         <TextView
             style="@style/textSt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
             android:layout_weight="1"
-            android:text="Salary"
-            android:layout_marginLeft="10dp"/>
+            android:text="Salary" />
 
         <EditText
             android:id="@+id/etSalary"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="4"
-            android:inputType="numberDecimal"
             android:hint="Enter Your Monthly Salary in Rupees"
-            android:textAlignment="textEnd"
-            />
+            android:inputType="numberDecimal"
+            android:textAlignment="textEnd" />
 
     </LinearLayout>
-
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        >
+        android:orientation="horizontal">
+
         <TextView
             style="@style/textSt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
             android:layout_weight="1"
-            android:text="Taxable Amount"
-            android:layout_marginLeft="10dp"/>
+            android:text="Taxable Amount" />
 
         <TextView
-            android:textColor="#E71C1C"
-            android:textSize="20sp"
-            android:textAlignment="textEnd"
             android:id="@+id/tvTaxAmount"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="4"
-
-            />
-
+            android:textAlignment="textEnd"
+            android:textColor="#E71C1C"
+            android:textSize="20sp" />
 
     </LinearLayout>
+
     <LinearLayout
-        android:layout_marginTop="15dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        >
+        android:layout_marginTop="15dp"
+        android:orientation="horizontal">
+
         <TextView
             style="@style/textSt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
             android:layout_weight="1"
-            android:text="Total Amount"
-            android:layout_marginLeft="10dp"/>
+            android:text="Total Amount" />
 
         <TextView
-            android:textAlignment="textEnd"
-            android:textColor="#E71C1C"
-            android:textSize="20sp"
             android:id="@+id/tvTotal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="4"
+            android:textAlignment="textEnd"
+            android:textColor="#E71C1C"
+            android:textSize="20sp"
 
             />
 
 
     </LinearLayout>
+
     <Button
-        android:layout_marginTop="20dp"
         android:id="@+id/btnCalculate"
-        android:layout_gravity="center"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Calculate"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
         android:background="#107E71"
-        />
+        android:text="Calculate" />
 </LinearLayout>
 
